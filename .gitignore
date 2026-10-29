@@ -4,3 +4,15 @@ obj/*
 *.user
 .vs/*
 .idea/*
+
+# Local compatibility build inputs and outputs
+/.tmp/
+/releases/
+**/bin/
+**/obj/
+**/__pycache__/
+*.suo
+/Beat Saber_Data/
+/UserData/
+/Plugins/
+/Libs/
