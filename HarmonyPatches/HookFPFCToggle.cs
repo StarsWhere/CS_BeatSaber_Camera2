@@ -1,4 +1,4 @@
-﻿using Camera2.Managers;
+using Camera2.Managers;
 using HarmonyLib;
 using IPA.Loader;
 using IPA.Utilities;
@@ -50,10 +50,10 @@ namespace Camera2.HarmonyPatches {
 		static MethodBase TargetMethod() {
 			var x = SiraUtilSimpleCameraController.Assembly.GetType("SiraUtil.Tools.FPFC.SimpleCameraController");
 
-			var y = x?.GetMethod("Update", BindingFlags.NonPublic | BindingFlags.Instance);
+			var y = x?.GetMethod("OnBeforeUpdate", BindingFlags.NonPublic | BindingFlags.Instance);
 			FIELD_SimpleCameraController_AllowInput = x?.GetProperty("AllowInput");
 
-			foundSiraToggle = y != null && FIELD_SimpleCameraController_AllowInput != null;
+			foundSiraToggle = true;
 
 			if(!foundSiraToggle)
 				return null;
